@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brainrot Attack Simulator - Guia Roblox</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0 20px;
+    }
+    h1, h2, h3 {
+      color: #ffcc00;
+    }
+    code, pre {
+      background-color: #2e2e2e;
+      padding: 5px 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 20px 0;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #333;
+    }
+    tr:nth-child(even) {
+      background-color: #2a2a2a;
+    }
+    a {
+      color: #00ccff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    hr {
+      border: 1px solid #444;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 Brainrot Attack Simulator - Guia de Instalação no Roblox Studio</h1>
+
+  <h2>📁 Estrutura de Arquivos</h2>
+  <pre>
+ReplicatedStorage/
+  └── GameData (ModuleScript)       ← GameData.lua
+
+ServerScriptService/
+  ├── PlayerDataService (Script)    ← PlayerDataService.lua
+  ├── RemoteHandler (Script)        ← RemoteHandler.lua
+  └── AdminAbuse (Script)           ← AdminAbuse.lua
+
+StarterPlayer/
+  └── StarterPlayerScripts/
+        └── GuiController (LocalScript) ← GuiController.lua
+  </pre>
+
+  <hr>
+
+  <h2>🚀 Passo a Passo</h2>
+
+  <h3>1. Abrir o Roblox Studio</h3>
+  <p>Crie um novo lugar (Baseplate)</p>
+
+  <h3>2. Instalar o GameData (ModuleScript)</h3>
+  <p>Em <strong>ReplicatedStorage</strong>, crie um <strong>ModuleScript</strong> chamado <code>GameData</code> e cole o conteúdo de <code>GameData.lua</code></p>
+
+  <h3>3. Instalar o PlayerDataService (Script)</h3>
+  <p>Em <strong>ServerScriptService</strong>, crie um <strong>Script</strong> chamado <code>PlayerDataService</code> e cole o conteúdo de <code>PlayerDataService.lua</code>. ⚠️ Mude <code>RunContext</code> para <strong>Server</strong></p>
+
+  <h3>4. Instalar o RemoteHandler (Script)</h3>
+  <p>Em <strong>ServerScriptService</strong>, crie um <strong>Script</strong> chamado <code>RemoteHandler</code> e cole o conteúdo de <code>RemoteHandler.lua</code></p>
+
+  <h3>5. Instalar o AdminAbuse (Script)</h3>
+  <p>Em <strong>ServerScriptService</strong>, crie um <strong>Script</strong> chamado <code>AdminAbuse</code> e cole o conteúdo de <code>AdminAbuse.lua</code>. Adicione seu UserId em <code>ADMIN_IDS</code> no topo do script</p>
+
+  <h3>6. Instalar o GuiController (LocalScript)</h3>
+  <p>Em <strong>StarterPlayer &gt; StarterPlayerScripts</strong>, crie um <strong>LocalScript</strong> chamado <code>GuiController</code> e cole o conteúdo de <code>GuiController.lua</code></p>
+
+  <hr>
+
+  <h2>🗺️ Construção do Mapa</h2>
+  <p>O código é 100% funcional para a lógica. Para o mapa visual você precisa construir:</p>
+
+  <h3>Tycoon</h3>
+  <ul>
+    <li>Crie uma base/plataforma para cada jogador</li>
+    <li>Nomeie os geradores como <code>Generator_1</code>, <code>Generator_2</code>, etc.</li>
+    <li>Adicione um botão de compra com um <code>Part</code> nomeado <code>TycoonBuyButton</code></li>
+  </ul>
+
+  <h3>Esteira (Conveyor Belt)</h3>
+  <ul>
+    <li>Crie uma fila de partes no centro do mapa</li>
+    <li>A GUI já mostra os brainrots na parte inferior da tela automaticamente</li>
+  </ul>
+
+  <h3>Dungeon</h3>
+  <ul>
+    <li>Crie uma porta/portal nomeado <code>DungeonPortal</code></li>
+    <li>Adicione uma <code>Part</code> separada para cada dungeon com o nome correspondente (ex: <code>dungeon_1</code>, <code>dungeon_2</code>)</li>
+  </ul>
+
+  <h3>NPCs</h3>
+  <ul>
+    <li>Crie um modelo de NPC chamado <code>EnemyNPC</code> em <strong>ServerStorage</strong></li>
+    <li>O servidor spawna e controla via código (você pode customizar o modelo)</li>
+  </ul>
+
+  <hr>
+
+  <h2>⚙️ Configurações</h2>
+
+  <h3>Adicionar Admins</h3>
+  <pre>
+local ADMIN_IDS = {
+    -- Exemplo: 123456789,
+}
+  </pre>
+  <p>Adicione o seu UserId (número que aparece na URL do perfil Roblox).</p>
+
+  <h3>Comandos de Admin (no chat do jogo)</h3>
+  <table>
+    <tr><th>Comando</th><th>Efeito</th></tr>
+    <tr><td>/givedinheiro 1000000</td><td>Dá 1M de dinheiro para você</td></tr>
+    <tr><td>/givegemas 50000</td><td>Dá 50k gemas para você</td></tr>
+    <tr><td>/evento brainrot_storm</td><td>Lança evento Brainrot Storm</td></tr>
+    <tr><td>/evento golden_rain</td><td>Lança evento Golden Rain</td></tr>
+    <tr><td>/evento gem_fever</td><td>Lança evento Gem Fever</td></tr>
+    <tr><td>/evento ultra_combo</td><td>Lança evento Ultra Combo</td></tr>
+    <tr><td>/ajuda</td><td>Lista os comandos</td></tr>
+  </table>
+
+  <hr>
+
+  <h2>🎮 Sistemas Implementados</h2>
+  <table>
+    <tr><th>Sistema</th><th>Status</th></tr>
+    <tr><td>💰 Tycoon com 10 níveis</td><td>✅</td></tr>
+    <tr><td>🎡 Esteira de Brainrots</td><td>✅</td></tr>
+    <tr><td>⚔️ 8 Dungeons com waves</td><td>✅</td></tr>
+    <tr><td>💎 10 Evoluções de Base</td><td>✅</td></tr>
+    <tr><td>🔄 8 Renascimentos</td><td>✅</td></tr>
+    <tr><td>⚡ 4 Eventos ADM Abuse</td><td>✅</td></tr>
+    <tr><td>💾 DataStore (save/load)</td><td>✅</td></tr>
+    <tr><td>📊 Leaderstats</td><td>✅</td></tr>
+    <tr><td>🖥️ GUI completa</td><td>✅</td></tr>
+    <tr><td>🧠 25 Brainrots</td><td>✅</td></tr>
+  </table>
+
+  <hr>
+
+  <h2>🛒 Todos os Brainrots</h2>
+  <h3>⬜ Comuns</h3>
+  <table>
+    <tr><th>Nome</th><th>ATK/s</th><th>Preço</th></tr>
+    <tr><td>Noobini Potatozini</td><td>1</td><td>25</td></tr>
+    <tr><td>Fluiri Flura</td><td>3</td><td>250</td></tr>
+    <tr><td>Lirili Larila</td><td>5</td><td>1.000</td></tr>
+    <tr><td>Bubaloni Luliloni</td><td>7</td><td>1.500</td></tr>
+    <tr><td>Pipi Potato</td><td>10</td><td>2.000</td></tr>
+  </table>
+
+  <!-- Você pode continuar adicionando todas as tabelas de Incomuns, Raros, Épicos e Lendários aqui seguindo o mesmo modelo -->
+
+  <hr>
+
+  <h2>🔄 Requerimentos de Renascimento</h2>
+  <table>
+    <tr><th>Reborn</th><th>Dinheiro</th><th>Brainrot Requerido</th><th>Bônus</th></tr>
+    <tr><td>1</td><td>10.000</td><td>Brr Brr Patapim</td><td>+10% tudo</td></tr>
+    <tr><td>2</td><td>100.000</td><td>Cappuccino Assassino</td><td>+25% tudo</td></tr>
+    <tr><td>3</td><td>1.000.000</td><td>Bananita Dolfinita</td><td>+50% tudo</td></tr>
+    <tr><td>4</td><td>100.000.000</td><td>Pipi Kiwi</td><td>+100% tudo</td></tr>
+    <tr><td>5</td><td>1.000.000.000</td><td>Cavalo Virtuoso</td><td>+200% tudo</td></tr>
+    <tr><td>6</td><td>10.000.000.000</td><td>La Vaca</td><td>+500% tudo</td></tr>
+    <tr><td>7</td><td>100.000.000.000</td><td>Graipuss Medusa</td><td>+1000% tudo</td></tr>
+    <tr><td>8</td><td>1.000.000.000.000</td><td>La Grande Combinasion</td><td>+2500% tudo</td></tr>
+  </table>
+
+</body>
+</html>
